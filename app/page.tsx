@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import styles from '../styles/home.module.scss'
+import styles from '@root/styles/home.module.scss'
 import Table from '@root/components/Table/table'
-import SiteData from "../assets/data/dataset.json";
+import SiteData from "@root/assets/data/dataset.json";
 import SearchBox from '@root/components/Search/SearchBox';
 
 export default function Home() {
