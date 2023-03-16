@@ -1,0 +1,31 @@
+.wrap {
+  & * {
+    font-size: 1.2rem;
+  }
+}
+
+.table {
+  width: 100%;
+  color: var(--fff);
+  border-collapse: collapse;
+
+  tr {
+    margin-bottom: 10px;
+  }
+  tr:hover {
+    background-color: rgba(white, .07);
+  }
+  th, td {
+    border: none;
+    padding: 20px 30px;
+    font-size: 14px;
+    color: #fff;
+    border-bottom: 4px solid #41464c;
+    text-align: center;
+    cursor: pointer;
+  }
+  td {
+    border-bottom: 3px solid #2b3035;
+  }
+}
+

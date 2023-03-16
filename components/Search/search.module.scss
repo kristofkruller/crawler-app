@@ -1,0 +1,37 @@
+.input {
+  height: 30px;
+  font-weight: 600;
+  color: var(--ylw);
+  min-width: 12rem;
+  text-align: center;
+  cursor: text;
+  background-color: rgba(white, .3);
+}
+.input::placeholder {
+  opacity: .7;
+  color: var(--ylw)
+}
+.input:focus {
+  outline: none;
+  border: none;
+  border-bottom: var(--ylw);
+  background-color: rgba(white, .08);
+  color: var(--ylw);
+}
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.hint {
+  color: var(--ylw);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.field {
+  background-color: rgba(white, .08);
+  color: var(--ylw);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
