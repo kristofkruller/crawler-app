@@ -1,6 +1,7 @@
 import { StaticHomeSeo } from "@root/components/seo";
 import { Raleway } from "next/font/google";
-import "../assets/styles/globals.scss";
+
+import "../styles/globals.scss";
 
 const raleway = Raleway({ subsets: ['latin'] });
 

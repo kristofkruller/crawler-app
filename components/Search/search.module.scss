@@ -5,12 +5,19 @@
   min-width: 12rem;
   text-align: center;
   cursor: text;
-  background-color: rgba(white, .3);
+  background-color: black;
+  outline: none;
+  border: none;
+  border-radius: 7px;
 }
 .input::placeholder {
   opacity: .7;
   color: var(--ylw)
 }
+.input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+
 .input:focus {
   outline: none;
   border: none;

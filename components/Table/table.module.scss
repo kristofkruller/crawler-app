@@ -17,15 +17,24 @@
   }
   th, td {
     border: none;
-    padding: 20px 30px;
-    font-size: 14px;
+    padding: 1rem 1.5rem;
+    font-size: 0.75rem;
     color: #fff;
     border-bottom: 4px solid #41464c;
     text-align: center;
     cursor: pointer;
+    @media (max-width: 680px) {
+      padding: 0.5rem;
+      line-height: 1;
+    }
   }
   td {
     border-bottom: 3px solid #2b3035;
   }
+
+  @media (max-width: 1366px) {
+    width: 90vw;
+  }
+
 }
 
