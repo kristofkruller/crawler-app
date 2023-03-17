@@ -17,10 +17,7 @@ const Table: FC<DataProp & React.PropsWithChildren> = ({ data, children }) => {
       <div className={styles.body}>
         {data.map((row: any, index: number) => (
           <Link key={index} 
-          href={`${process.env.NODE_ENV === "development" ? (
-            process.env.NEXT_PUBLIC_DEVHOST
-          ) : (process.env.NEXT_PUBLIC_HOSTNAME)
-          }/api/${row['Domain Name']}`}
+          href={`/api/${row['Domain Name']}`}
           className={styles.row}
           >
             {

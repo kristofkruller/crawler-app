@@ -13,7 +13,7 @@ const CrawlBtn: FC<BtnProp> = ({ row }) => {
   const handleCrawl = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     try { 
-      const data = await axios.get(`http://localhost:3000/api/${current}`)
+      const data = await axios.get(`/api/${current}`)
       .then(response => response.data);
     // .then(data => {
     //   // Update the UI with the list of third-party libraries
