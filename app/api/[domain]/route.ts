@@ -1,13 +1,9 @@
 import { NextResponse } from "next/server";
-
-const fs = require("fs");
 const puppeteer = require("puppeteer");
 
-export async function GET(request: Request, res:NextResponse, { params }: {params: { domain: string }}) {
-  
-  // const targetUrl = request.url.substring(request.url.lastIndexOf("/") + 1);
-  const targetUrl = await params.domain;
-  console.log(targetUrl);
+export async function GET(request: Request) {
+
+  const targetUrl = request.url.substring(request.url.lastIndexOf("/") + 1);
 
   const browser = await puppeteer.launch();
 
@@ -37,12 +33,6 @@ export async function GET(request: Request, res:NextResponse, { params }: {param
     return thirdPartyUrls;
   });
 
-  // Save data to JSON file
-  // fs.writeFile('thirdparty.json', JSON.stringify(thirdpartyUrls), (err) => {
-  //   if (err) throw err;
-  //   console.log('File saved');
-  // });
-
   await browser.close();
+  return NextResponse.json(thirdPartyUrls);
 }
-// module.exports = crawl;

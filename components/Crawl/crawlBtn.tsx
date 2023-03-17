@@ -26,7 +26,6 @@ const CrawlBtn: FC<BtnProp> = ({ row }) => {
     //     list.appendChild(listItem);
     //   });
     // });
-    console.log(await data);
 
     } catch (error) { console.error(error) }
 

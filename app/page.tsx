@@ -4,7 +4,7 @@ import Table from '@root/components/Table/table'
 import SiteData from "@root/assets/data/dataset.json";
 import SearchBox from '@root/components/Search/SearchBox';
 
-export default function Home() {
+export default function Home({children}: React.PropsWithChildren) {
   return (
     <main className={styles.wrap}>
       <section className={styles.title}>
@@ -26,7 +26,7 @@ export default function Home() {
         />
       </section> */}
       <SearchBox data={SiteData} />
-      <Table data={SiteData} />
+      <Table data={SiteData}>{children}</Table>
     </main>
   )
 }

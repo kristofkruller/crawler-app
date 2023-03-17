@@ -11,7 +11,7 @@ export default async function DomainPage ({
 }) {
   let siteData: SiteData[] = data;
   siteData = siteData.filter(site => site["Site"].replaceAll(" ", "%20") === params.site);
-  console.log(siteData)
+
   return (
     <>
       <Link href="/">Back</Link>

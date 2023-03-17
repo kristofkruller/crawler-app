@@ -1,35 +1,37 @@
-import { DataProp } from '@root/crawl';
+import { DataProp, SiteData } from '@root/crawl';
+import Link from 'next/link';
 import React, { FC } from 'react';
 import styles from "./table.module.scss";
 
-const Table: FC<DataProp> = ({ data }) => {
+const Table: FC<DataProp & React.PropsWithChildren> = ({ data, children }) => {
   const header = Object.keys(data[0]);
 
   return (
-    <table className={styles.table}>
-      <thead>
-        <tr>
-          {header.map(title => {
-            const tu = title.toUpperCase();
-            return <th key={tu}>{tu}</th>;
-          })}
-        </tr>
-      </thead>
-      <tbody>
+    <section className={styles.table}>
+      <div className={styles.header}>
+        {header.map(title => {
+          const tUp = title.toUpperCase();
+          return <p className={styles.content} key={tUp}>{tUp}</p>;
+        })}
+      </div>
+      <div className={styles.body}>
         {data.map((row: any, index: number) => (
-          <>
-          <tr key={index}>
-              {
-                header.map((val: string, _) => {
-                  return <td key={row[val]}>{row[val]}</td>
-                })
-              }
-          </tr>
-          </>
-        ))
-        }
-      </tbody>
-    </table>
+          <Link key={index} 
+          href={`${process.env.NODE_ENV === "development" ? (
+            process.env.NEXT_PUBLIC_DEVHOST
+          ) : (process.env.NEXT_PUBLIC_HOSTNAME)
+          }/api/${row['Domain Name']}`}
+          className={styles.row}
+          >
+            {
+              header.map((val: string, _) => {
+                return <p className={styles.content} key={row[val]}>{row[val]}</p>
+              })
+            }
+          </Link>
+        ))}
+      </div>
+    </section>
   );
 };
 
