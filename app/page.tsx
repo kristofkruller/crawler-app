@@ -2,6 +2,7 @@ import styles from '@root/styles/home.module.scss'
 import Table from '@root/components/Table/table'
 import SiteData from "@root/assets/data/dataset.json";
 import SearchBox from '@root/components/Search/SearchBox';
+import JsonBtn from '@root/components/Buttons/jsonBtn';
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <p>for the top 50&apos;s</p>
         <h2>Just pick one site from the list and let the <span>crawler</span> do his job</h2>
       </section>
+      <JsonBtn />
       <SearchBox data={SiteData} />
       <Table data={SiteData} />
     </main>

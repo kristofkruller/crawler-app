@@ -1,0 +1,26 @@
+.basic {
+  padding: .25rem;
+  background-color: var(--000);
+  color: var(--jng);
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+.basic:hover {
+  transform: scale(1.5);
+  background-color: var(--jng);
+  color: var(--000);
+}
+.more {
+  composes: basic;
+  position: absolute;
+  transform: translate(25%, -175%);
+  font-size: 0.75rem;
+
+  @media (max-width: 1366px) {
+    transform: translate(0, calc(-100% - 10px));
+  }
+  @media (max-width: 515px) {
+    transform: translate(25%, calc(-100% - 10px));
+  }
+}

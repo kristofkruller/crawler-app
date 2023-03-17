@@ -31,9 +31,7 @@
     align-items: center;
     margin-bottom: 10px;
   }
-  .row:hover {
-    background-color: rgba(white, .07);
-  }
+
   .header {
     display: table-header-group;
 
@@ -46,6 +44,9 @@
   }
   .row {
     display: table-row;
+  }
+  .row:hover {
+    background-color: rgba(white, .07);
   }
   .content {
     border-bottom: 3px solid #2b3035;

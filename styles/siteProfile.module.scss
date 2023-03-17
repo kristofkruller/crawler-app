@@ -1,0 +1,48 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--000);
+  min-height: 100vh;
+
+  .card {
+    width: 50vw;
+  
+    border-radius: 7px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 4px 12px;
+    padding: 2rem;
+
+    display: block;
+
+    button {
+      margin: 1rem;
+      padding: .5rem;
+      border: var(--jng) solid thin;
+      border-radius: 7px;
+    }
+
+    .content {
+      overflow: hidden;      
+      &, * { 
+        display: block;
+        padding: .5rem;
+      }
+      p {
+        color: var(--fff);
+        width: fit-content;
+      }
+      span {
+        font-weight: 900;
+        color: #fff;
+      }
+      .url {
+        color: lightgrey;
+        cursor: pointer;
+        word-break: break-all;
+      }
+      .url:hover {
+        color: var(--jng);
+      }
+    }
+  }
+}

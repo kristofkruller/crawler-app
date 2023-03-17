@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 const puppeteer = require("puppeteer");
+// import {Cloudinary} from '@cloudinary/url-gen';
+
+// const cldInstance = new Cloudinary({cloud: {cloudName: 'dxpyqnmmf'}});
 
 export async function GET(request: Request) {
 
@@ -11,8 +14,8 @@ export async function GET(request: Request) {
   
   await page.goto(`https://${targetUrl}`);
 
-  await page.screenshot({ path: `webscrape-${targetUrl}.png`, fullPage: true });
-
+  // await page.screenshot({ path: `webscrape-${targetUrl}.png`, fullPage: true });
+  // console.log(cldInstance)
   const thirdPartyUrls = await page.evaluate(() => {
     const thirdPartyUrls = [];
 
