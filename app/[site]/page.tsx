@@ -21,8 +21,8 @@ export default async function DomainPage ({
         <section key={site.Category} className={styles.card}>
           <h1 key={site.Site}>{site.Site}</h1>
           <h2 key={site["Domain Name"]}>{site["Domain Name"]}</h2>
-          <div className={styles.content}>
-            <p key={site.rank}>This site in category</p> 
+          <div key={site.rank} className={styles.content}>
+            <p>This site in category</p> 
             <span>{site.Category}</span>
             <p>achieved rank</p>
             <span>{`${Number(site.rank) + 1}.`}</span> 
@@ -32,7 +32,7 @@ export default async function DomainPage ({
           <BackBtn />
 
         </section>
-</>
+        </>
       ))}
     </main>
   )
