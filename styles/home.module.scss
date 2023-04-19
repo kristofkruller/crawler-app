@@ -24,7 +24,7 @@
         color: var(--000);
       }
 
-      div:first-child {
+      div {
         animation: text-animation 6s infinite;
       }
       .fir {
@@ -38,12 +38,12 @@
       }
 
       @keyframes text-animation {
-        0% {margin-top: 0;}
-        20% {margin-top: -8rem;}
-        40% {margin-top: -16rem;}
-        60% {margin-top: -16rem;}
-        80% {margin-top: -8rem;}
-        100% {margin-top: 0;}
+        0% {transform: translateY( 0 )}
+        20% {transform: translateY( -8rem)}
+        40% {transform: translateY( -16rem)}
+        60% {transform: translateY( -16rem)}
+        80% {transform: translateY( -8rem)}
+        100% {transform: translateY( 0)}
       }
     }
     h2 {

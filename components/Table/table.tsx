@@ -19,12 +19,12 @@ const Table: FC<DataProp & React.PropsWithChildren> = ({ data, children }) => {
         {data.map((row: any, index: number) => (
           <>
           <Link key={index} 
-          href={`/api/${row['Domain Name']}`}
+          href={row["Category"] === "Adult" ? "#" : `/api/${row['Domain Name']}`}
           className={styles.row}
           >
             {
               header.map((val: string, _) => {
-                return <p className={styles.content} key={row[val]}>{row[val]}</p>
+                return <p className={styles.content} key={row[val]} style={row["Category"] === "Adult" ? {color: "#fffbfc90"} : undefined}>{row[val]}</p>
               })
             }
           </Link>
