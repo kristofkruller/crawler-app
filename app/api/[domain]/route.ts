@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   const context = await browser.createIncognitoBrowserContext();
   // NEW PAGE THERE
   const page = await context.newPage();
-
+  await page.setDefaultNavigationTimeout(0); //handle TimeoutError
   await page.goto(`https://${targetUrl}`, { waitUntil: ['networkidle0', 'load', 'domcontentloaded'] });
   // { waitUntil: 'networkidle0' } will ensure that there are no more than 0 network connections for at least 500ms before the navigation is considered to be finished.
   
