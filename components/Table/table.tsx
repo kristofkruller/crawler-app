@@ -4,6 +4,11 @@ import React, { FC } from 'react';
 import MoreBtn from '../Buttons/profileBtn';
 import styles from "./table.module.scss";
 
+// REDUX
+import { store } from '@root/assets/store';
+import { setLoading } from '@root/assets/store/loadSlice';
+
+
 const Table: FC<DataProp & React.PropsWithChildren> = ({ data, children }) => {
   const header = Object.keys(data[0]);
 
@@ -21,6 +26,7 @@ const Table: FC<DataProp & React.PropsWithChildren> = ({ data, children }) => {
           <Link key={index} 
           href={row["Category"] === "Adult" ? "#" : `/api/${row['Domain Name']}`}
           className={styles.row}
+          // onClick={() => store.dispatch(setLoading(true))}
           >
             {
               header.map((val: string, _) => {

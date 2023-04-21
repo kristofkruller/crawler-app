@@ -1,8 +1,12 @@
 import { NextResponse } from "next/server";
 import scrnHeadMeta from "../../../assets/scrnHeadMeta"
+
+// PUPPETEER
 const puppeteer = require("puppeteer");
 
+// GET CALL
 export async function GET(request: Request) {
+
   const startPoint = request.headers.get("referer");
   const targetUrl = request.url.substring(request.url.lastIndexOf("/") + 1);
  
@@ -53,5 +57,6 @@ export async function GET(request: Request) {
   `
 
   await browser.close();
+
   return new NextResponse(`${scrnHtml}`, {headers: {"Content-Type": "text/html"}});
 }
